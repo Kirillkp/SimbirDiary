@@ -99,7 +99,6 @@ class ViewController: UIViewController {
     }
     
     func viewOnDay(date: Date) {
-        self.tableView.reloadData()
         let calendar = Calendar.current
         let components = calendar.dateComponents([.weekday], from: date)
         guard let weekday = components.weekday else { return }
@@ -138,11 +137,6 @@ class ViewController: UIViewController {
                 present(pageViewController, animated: true, completion: nil)
            }
         }
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.tableView.reloadData()
     }
 }
 
